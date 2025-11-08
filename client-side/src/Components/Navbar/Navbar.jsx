@@ -1,11 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { useContext } from 'react';
+import { Link, NavLink } from 'react-router';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../Context/AuthContext';
 
 
 const Navbar = () => {
-
+    const { user, signOutUser } = useContext(AuthContext);
     const btnclick = () => {
         Swal.fire({
             title: "Good job!",
@@ -13,6 +15,8 @@ const Navbar = () => {
             icon: "success"
         });
     }
+
+
 
 
 
@@ -45,7 +49,12 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <a onClick={() => toast("Wow so easy!")} className="btn">Button</a>
+                        {
+                            user ?
+                                <Link onClick={signOutUser} className="btn">Sign Out</Link>
+                                :
+                                <Link to={"/login"} className="btn">Sign In</Link>
+                        }
                     </div>
                 </div>
             </nav>
