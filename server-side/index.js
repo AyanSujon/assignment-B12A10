@@ -4,6 +4,7 @@
 const express = require('express');
 const cors = require('cors');
 const { MongoClient, ServerApiVersion } = require('mongodb');
+require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -12,7 +13,8 @@ app.use(cors());
 app.use(express.json());
 
 // mongoDB URI and Client 
-const uri = "mongodb+srv://assignment-B12A10:EmCSTbirhFUjKOXP@cluster0.tachgq7.mongodb.net/?appName=Cluster0";
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.tachgq7.mongodb.net/?appName=Cluster0`;
+// const uri = "mongodb+srv://assignment-B12A10:EmCSTbirhFUjKOXP@cluster0.tachgq7.mongodb.net/?appName=Cluster0";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
@@ -45,9 +47,17 @@ async function run() {
     // ALl Methords 
     app.post('/users', async (req, res)=>{
       const newUser = req.body;
-      const result = await usersCollention.insertOne(newUser);
-      res.send(result);
+      const email = req.body.email;
+      const query = {email: email}
+      const existingUser = await usersCollention.findOne(query);
+      if(existingUser){
+        res.send({message: 'User already exist, Do not need to insert again.'});
+      }
+      else{
+        const result = await usersCollention.insertOne(newUser);
+        res.send(result);
 
+      }
     })
 
 

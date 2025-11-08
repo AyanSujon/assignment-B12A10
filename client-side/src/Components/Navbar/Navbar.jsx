@@ -1,7 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Link, NavLink } from 'react-router';
-import { toast } from 'react-toastify';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../Context/AuthContext';
 
