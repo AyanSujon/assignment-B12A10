@@ -25,12 +25,14 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to={"/"} className={"font-semebold"}>Home</NavLink></li>
         <li><NavLink to={"/challenges"} className={"font-semebold"}>Challenges</NavLink></li>
+        <li><NavLink to={"/eco-tips"} className={"font-semebold"}>Eco Tips</NavLink></li>
+        <li><NavLink to={"/events"} className={"font-semebold"}>Events</NavLink></li>
         {
-            user?
-            <li><NavLink to={`/challenges-add`} className={"font-semebold"}>Add Challenges</NavLink></li>
-            : ""
+            user ?
+                <li><NavLink to={`/challenges-add`} className={"font-semebold"}>Add Challenges</NavLink></li>
+                : ""
 
-            
+
         }
 
 
@@ -73,7 +75,7 @@ const Navbar = () => {
                                             <Link to={"/profile"} className="tooltip" data-tip="Click to Profile">
                                                 <img className='w-25 mx-auto rounded-full overflow-hidden border border-primary' src={user?.photoURL || "https://i.ibb.co.com/tp3xgXbG/avater.jpg"} alt="Avater" />
                                             </Link>
-
+                                            <NavLink to={`/challenges-add`} className={" text-center font-semebold hover:underline"}>Add Challenges</NavLink>
                                             <NavLink to="/my-activities" className=" hover:underline">
                                                 My Activities
                                             </NavLink>

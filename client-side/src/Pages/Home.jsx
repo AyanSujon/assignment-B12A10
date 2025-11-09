@@ -4,6 +4,8 @@ import EcoStatusCards from "../components/Home/EcoStatusCards";
 import useChallenges from '../Hooks/useChallenges';
 import Loading from './Loading';
 import Error404 from './Error404';
+import ActiveChallenges from '../Components/Home/ActiveChallenges';
+import RecentTips from '../Components/Home/RecentTips';
 
 const Home = () => {
 
@@ -21,6 +23,8 @@ const Home = () => {
         <div>
             <HeroSlider/>
             <EcoStatusCards/>
+            <ActiveChallenges/>
+            <RecentTips/>
         </div>
     );
 };

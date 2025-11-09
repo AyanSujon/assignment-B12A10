@@ -10,6 +10,8 @@ import Challenges from "../Pages/Challenges";
 import MyActivities from "../Pages/MyActivities";
 import AddChallenges from "../Pages/AddChallenges";
 import PrivateRoute from "./PrivateRoute";
+import EcoTips from "../Pages/EcoTips";
+import Events from "../Pages/Events";
 
 
 const router = createBrowserRouter([
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
         {
             index: true,
             element: <Home/>,
+        },
+        {
+            path: '/eco-tips',
+            element: <EcoTips/>,
+        },
+        {
+            path: '/events',
+            element: <Events/>,
         },
         {
             path: '/register',

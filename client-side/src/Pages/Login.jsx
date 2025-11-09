@@ -95,7 +95,7 @@ const Login = () => {
                 setUser(res.user);
                 navigate(from);
                 setLoading(false);
-                toast.success("Signin with Google Successfull!");
+                toast.success("Login Successfull!");
             })
             .catch((e) => {
                 console.log(e);
@@ -136,7 +136,7 @@ const Login = () => {
                         })
                     setLoading(false);
                     setUser(newUser);
-                    toast.success("Signin with Google Successfull!");
+                    toast.success("Login with Google Successfull!");
                     navigate(from);
     
                 })

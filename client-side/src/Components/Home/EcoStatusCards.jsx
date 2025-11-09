@@ -10,7 +10,6 @@ const EcoStatusCards = () => {
     });
 
     useEffect(() => {
-        // Example mock data — replace with your API calls or MongoDB data fetching
         const userChallenges = [
             { status: "Finished", progress: 100 },
             { status: "Ongoing", progress: 60 },

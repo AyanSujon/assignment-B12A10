@@ -43,6 +43,8 @@ async function run() {
     const db = client.db("assignment-B12A10");
     const usersCollention = db.collection("users");
     const challengesCollection = db.collection("challenges");
+    const ecoTipsCollection = db.collection("eco_tips");
+
 
     
 
@@ -90,6 +92,13 @@ async function run() {
         })
 
 
+        // EcoTips Collection 
+        app.get('/api/eco-tips', async (req, res)=>{
+          const cursor = ecoTipsCollection.find();
+          const result = await cursor.toArray();
+          res.send(result)
+          console.log(result);
+        })
 
 
 
