@@ -5,6 +5,11 @@ import Register from "../Pages/Register";
 import Login from "../Pages/Login";
 import Error404 from "../Pages/Error404";
 import Loading from "../Pages/Loading";
+import ForgotPassword from "../Pages/ForgotPassword";
+import Challenges from "../Pages/Challenges";
+import MyActivities from "../Pages/MyActivities";
+import AddChallenges from "../Pages/AddChallenges";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -25,6 +30,26 @@ const router = createBrowserRouter([
         {
             path: '/login',
             element: <Login/>
+        },
+        {
+            path: '/*',
+            element: <Error404/>,
+        },
+        {
+            path: '/forgot-password',
+            element: <ForgotPassword/>,
+        },
+        {
+            path: '/challenges',
+            element: <Challenges/>,
+        },
+        {
+            path: '/challenges/add',
+            element: <PrivateRoute><AddChallenges/></PrivateRoute>,
+        },
+        {
+            path: '/my-activities',
+            element: <PrivateRoute><MyActivities/></PrivateRoute>,
         },
 
     ]

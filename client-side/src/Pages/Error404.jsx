@@ -10,7 +10,7 @@ const Error404 = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Main Content */}
       <main className="flex flex-col items-center justify-center flex-1 px-4 py-20">
@@ -31,7 +31,7 @@ const Error404 = () => {
       </main>
 
       {/* Footer */}
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };
