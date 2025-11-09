@@ -1,13 +1,20 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* Swiper slider resources */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/scrollbar';
+
+
 /* Navbar Active color */
  .menu li > .active {
   @apply text-[#297B33];
 }
 /* Navbar items bg-transparent  */
-.navbar a:focus,
-.navbar a:hover {
+.navbar .menu li > a:hover,
+.navbar .menu li > a:focus {
   @apply bg-transparent outline-none;
 }
 /* Private Route text color */

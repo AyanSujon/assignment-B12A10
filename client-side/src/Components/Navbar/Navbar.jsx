@@ -29,10 +29,10 @@ const Navbar = () => {
 
     </>
     return (
-        <div className='shadow-sm'>
+        <div className='shadow-sm bg-white/30 backdrop-blur  sticky top-0 z-10'>
             <Container>
                 <nav>
-                    <div className="navbar bg-base-100 ">
+                    <div className="navbar ">
                         <div className="navbar-start">
                             <div className="dropdown">
                                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -79,7 +79,7 @@ const Navbar = () => {
                                 ) : (
                                     <Link
                                         to="/login"
-                                        className="btn text-white bg-[#297B33] hover:bg-[#82B532] "
+                                        className="btn text-white bg-[#297B33] hover:bg-[#82B532] border-none"
                                     >
                                         Log in
                                     </Link>

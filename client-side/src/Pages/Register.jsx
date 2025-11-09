@@ -262,10 +262,10 @@ const Register = () => {
                         console.log("Data after user submission: ", data);
                     })
                 setLoading(false);
-                signOutUser();
-                setUser(null);
+                // signOutUser();
+                // setUser(null);
                 toast.success("Signin with Google Successfull!");
-                navigate("/login");
+                // navigate("/login");
 
             })
             .catch((error) => {
@@ -282,7 +282,7 @@ const Register = () => {
                 <div>
                     <div className="card mx-auto my-10 bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div className="card-body">
-                            <Link to={"/"} className=" flex  items-center text-[#82B532] text-xl font-semibold"><figure className='w-12 pr-1'><img src={"https://i.ibb.co.com/tpnX8gT8/site-logo2.png"} alt="Site Logo" /></figure></Link>
+                            <Link to={"/"} className=" mx-auto text-[#82B532] text-xl font-semibold"><figure className='w-12 pr-1'><img src={"https://i.ibb.co.com/tpnX8gT8/site-logo2.png"} alt="Site Logo" /></figure></Link>
                             <h1 className="text-3xl font-bold text-center ">Join EcoTrack</h1>
                             <form onSubmit={handleSubmit}>
 
