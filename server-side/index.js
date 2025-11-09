@@ -42,6 +42,8 @@ async function run() {
     // All collection and Database
     const db = client.db("assignment-B12A10");
     const usersCollention = db.collection("users");
+    const challengesCollection = db.collection("challenges");
+
     
 
     // ALl Methords 
@@ -61,7 +63,31 @@ async function run() {
     })
 
 
+    // Add challenges Methords 
+    app.post('/api/challenges', async (req, res)=>{
+      const newUser = req.body;
+      const createdBy = req.body.createdBy;
+      const query = {createdBy: createdBy}
+      const existingChallenges = await challengesCollection.findOne(query);
+      if(existingChallenges){
+        res.send({message: 'Challenges already exist, Do not need to insert again.'});
+      }
+      else{
+        const result = await challengesCollection.insertOne(newUser);
+        res.send(result);
+        // console.log(result);
 
+      }
+    })
+
+
+
+        // find  challengesCollection all data
+        app.get('/api/challenges', async (req, res)=> {
+          const cursor = challengesCollection.find();
+          const result = await cursor.toArray();
+          res.send(result);
+        })
 
 
 

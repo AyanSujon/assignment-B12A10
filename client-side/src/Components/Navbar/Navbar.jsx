@@ -25,6 +25,13 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to={"/"} className={"font-semebold"}>Home</NavLink></li>
         <li><NavLink to={"/challenges"} className={"font-semebold"}>Challenges</NavLink></li>
+        {
+            user?
+            <li><NavLink to={`/challenges-add`} className={"font-semebold"}>Add Challenges</NavLink></li>
+            : ""
+
+            
+        }
 
 
     </>

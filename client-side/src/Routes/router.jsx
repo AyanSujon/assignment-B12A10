@@ -44,7 +44,7 @@ const router = createBrowserRouter([
             element: <Challenges/>,
         },
         {
-            path: '/challenges/add',
+            path: '/challenges-add',
             element: <PrivateRoute><AddChallenges/></PrivateRoute>,
         },
         {
