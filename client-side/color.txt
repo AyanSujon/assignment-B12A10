@@ -1,0 +1,3 @@
+Another color: #21bded
+Footer color: #1c2c44
+

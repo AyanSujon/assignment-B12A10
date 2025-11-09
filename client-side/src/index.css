@@ -11,6 +11,6 @@
   @apply bg-transparent outline-none;
 }
 /* Private Route text color */
-.navbar a:focus, .navbar a:hover, .navbar .active{
+.navbar div ul a:focus, .navbar div ul a:hover, .navbar .active{
       @apply text-[#297B33];
 }
